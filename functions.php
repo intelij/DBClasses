@@ -58,7 +58,7 @@ Class database {
 		function getCampaignManagers() {
 			global $connection;
 			$sql = "SELECT * 
-					FROM  `xxxxx_xxxxx`";                //FROM  `campaign_managers`"; 
+					FROM  `xxxxx_xxxxx`";                
 			
 			$results = mysql_query($sql);  
 			
@@ -71,7 +71,7 @@ Class database {
 		function getDistinctUsers() {
 			global $connection;
 			$sql = "SELECT DISTINCT   `username`, `password`, `user_id`, `firstname`, `lastname`, `access_level`  
-					FROM  `xxxxx_xxxxx` ORDER BY  `user_id` DESC ";                //FROM  `campaign_managers`";  
+					FROM  `xxxxx_xxxxx` ORDER BY  `user_id` DESC ";               
 			
 			$results = mysql_query($sql);  
 			
@@ -83,7 +83,7 @@ Class database {
 		function getDisUsers($locale) {
 			global $connection;
 			$sql = "SELECT DISTINCT   `username`, `password`, `user_id`, `firstname`, `lastname`, `access_level`   
-					FROM  `xxxxx_xxxxx` WHERE `locale` = '$locale'  ORDER BY  `user_id` DESC ";                //FROM  `campaign_managers`";  
+					FROM  `xxxxx_xxxxx` WHERE `locale` = '$locale'  ORDER BY  `user_id` DESC ";                
 			
 			$results = mysql_query($sql);  
 			
@@ -98,7 +98,7 @@ Class database {
 			$sql = "SELECT * 
 					FROM  `xxxxx_xxxxx`                 
 					WHERE  `user_id` = '$userid'
-					ORDER BY `client_id` ASC";            //FROM  `campaign_managers`"; 
+					ORDER BY `client_id` ASC";           
 			
 			$results = mysql_query($sql);  
 			
@@ -280,17 +280,16 @@ Class genThumbsnail {
       $root = $_SERVER['DOCUMENT_ROOT'];
     
 
-	$fp = fopen('/var/www/vhosts/dpk.thinkjam.com/httpdocs/_temp/data.txt', 'w');
+	$fp = fopen('/var/www/vhosts/mydomain.com/httpdocs/_temp/data.txt', 'w');
 	fwrite($fp, $test );
 	fwrite($fp, "\n\r Root: ".$root);
 	fclose($fp);   
 	
 	$output = exec($test);
-         // exec("convert assets/20th_century_fox/get_the_gringo/images/SV-04425.JPG  -strip -quality 80% -resize 90x90^  -gravity center -extent 90x90 assets/20th_century_fox/get_the_gringo/images/THUMBS2_SV-04425.JPG", $blaArray, $responsev);
+
 	
 	echo $output; 
-	
-	// echo "<script>javascript:alert('Generating Thumbs!');</script>";
+
 
 	}   
 	
